@@ -1,3 +1,5 @@
 {
-  "hosting": {}
+  "hosting": {
+    "public": "public"
+  }
 }
