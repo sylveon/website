@@ -10,4 +10,4 @@ before_script:
   - npm install -g firebase-tools
 
 script:
-  - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT}
+  - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT} --only hosting
