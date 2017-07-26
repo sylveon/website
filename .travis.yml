@@ -11,3 +11,6 @@ before_script:
 
 script:
   - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT} --only hosting --non-interactive
+
+after_success:
+  - curl https://www.cloudflare.com/api_json.html -d 'a=fpurge_ts' -d 'tkn=${CLOUDFLARE_API_TOKEN}' -d 'email=${CLOUDFLARE_EMAIL}' -d 'z=charlesmilette.net' -d 'v=1'
