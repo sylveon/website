@@ -37,6 +37,19 @@ body {
 	font-weight: 200;
 }
 
+.source {
+	position: fixed;
+	bottom: 1%;
+	right: 0.5%;
+	text-decoration: none;
+	color: #606060;
+	transition:all 500ms ease;
+}
+
+.source:hover {
+	color: #bababa;
+}
+
 @media only screen and (max-width : 768px) {
 	.main-title {
 		font-size: 3em;
