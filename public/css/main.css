@@ -1,8 +1,14 @@
 :root {
-  --background: url('../img/bg-1.jpg');
+	--background: url('../img/bg-1.jpg');
 }
 
-*, *:after, *:before { box-sizing: border-box; }
+*, *:after, *:before {
+	box-sizing: border-box;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 body {
 	background: #fff;
