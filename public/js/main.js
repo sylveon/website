@@ -14,15 +14,21 @@
 
         largeHeader = document.getElementById('large-header');
         largeHeader.style.height = height+'px';
-        var bgNumber = Math.floor(Math.random() * 2);
+        var bgNumber = Math.floor(Math.random() * 3);
         largeHeader.style.setProperty('--background', 'url(../img/bg-' + bgNumber + '.jpg');
 
         var source = document.getElementById("source");
         var author = document.getElementById("author");
+        var type   = document.getElementById("type");
         switch (bgNumber) {
             case 0:
                 author.textContent = "Mikael Gustaffson";
                 source.href = "https://www.artstation.com/artwork/Y2Wew";
+                break;
+            case 2:
+                author.textContent = "Rob Cartwright";
+                source.href = "https://robcartwrightphotography.wordpress.com/2011/11/29/365-360-tuesday-29-november-neon-street/";
+                type.textContent = "Picture";
                 break;
             case 1:
             default:
