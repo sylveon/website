@@ -14,6 +14,7 @@
 
         largeHeader = document.getElementById('large-header');
         largeHeader.style.height = height+'px';
+	largeHeader.style.setProperty('--background', 'url(../img/bg-' + Math.floor(Math.random() * 2) + '.jpg');
 
         canvas = document.getElementById('canvas');
         canvas.width = width;

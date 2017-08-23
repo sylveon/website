@@ -1,3 +1,7 @@
+:root {
+  --background: url('../img/bg-1.jpg');
+}
+
 *, *:after, *:before { box-sizing: border-box; }
 
 body {
@@ -12,7 +16,7 @@ body {
 .large-header {
 	position: relative;
 	width: 100%;
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bg.png');
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), var(--background);
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
