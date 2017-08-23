@@ -14,7 +14,20 @@
 
         largeHeader = document.getElementById('large-header');
         largeHeader.style.height = height+'px';
-	largeHeader.style.setProperty('--background', 'url(../img/bg-' + Math.floor(Math.random() * 2) + '.jpg');
+        var bgNumber = Math.floor(Math.random() * 2);
+        largeHeader.style.setProperty('--background', 'url(../img/bg-' + bgNumber + '.jpg');
+
+        var source = document.getElementById("source");
+        var author = document.getElementById("author");
+        switch (bgNumber) {
+            case 0:
+                author.textContent = "Mikael Gustaffson";
+                source.href = "https://www.artstation.com/artwork/Y2Wew";
+                break;
+            case 1:
+            default:
+                break;
+        }
 
         canvas = document.getElementById('canvas');
         canvas.width = width;

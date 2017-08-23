@@ -41,7 +41,7 @@ body {
 	font-weight: 200;
 }
 
-.source {
+#source {
 	position: fixed;
 	bottom: 1%;
 	right: 0.5%;
@@ -50,7 +50,7 @@ body {
 	transition:all 500ms ease;
 }
 
-.source:hover {
+#source:hover {
 	color: #bababa;
 }
 
