@@ -2,7 +2,9 @@
 	--background: url('../img/bg-1.jpg');
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
 	box-sizing: border-box;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -22,7 +24,7 @@ body {
 .large-header {
 	position: relative;
 	width: 100%;
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), var(--background);
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background);
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
@@ -37,7 +39,7 @@ body {
 	text-align: center;
 	top: 50%;
 	left: 50%;
-	transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%, -50%, 0);
 	text-transform: uppercase;
 	font-size: 4.2em;
 	letter-spacing: 0.1em;
@@ -53,14 +55,14 @@ body {
 	right: 0.5%;
 	text-decoration: none;
 	color: #606060;
-	transition:all 500ms ease;
+	transition: all 500ms ease;
 }
 
 #source:hover {
 	color: #bababa;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
 	.main-title {
 		font-size: 3em;
 	}
