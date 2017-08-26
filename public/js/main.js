@@ -1,6 +1,6 @@
 (function () {
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var width, height, largeHeader, canvas, ctx, points, target = true;
 
     // Main
     initHeader();
@@ -101,7 +101,6 @@
         if (!('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
         }
-        window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
     }
 
@@ -116,11 +115,6 @@
         }
         target.x = posx;
         target.y = posy;
-    }
-
-    function scrollCheck() {
-        if (document.body.scrollTop > height) animateHeader = false;
-        else animateHeader = true;
     }
 
     function resize() {
@@ -140,27 +134,25 @@
     }
 
     function animate() {
-        if (animateHeader) {
-            ctx.clearRect(0, 0, width, height);
-            for (var i in points) {
-                // detect points in range
-                if (Math.abs(getDistance(target, points[i])) < 4000) {
-                    points[i].active = 0.3;
-                    points[i].circle.active = 0.6;
-                } else if (Math.abs(getDistance(target, points[i])) < 20000) {
-                    points[i].active = 0.1;
-                    points[i].circle.active = 0.3;
-                } else if (Math.abs(getDistance(target, points[i])) < 40000) {
-                    points[i].active = 0.02;
-                    points[i].circle.active = 0.1;
-                } else {
-                    points[i].active = 0;
-                    points[i].circle.active = 0;
-                }
-
-                drawLines(points[i]);
-                points[i].circle.draw();
+        ctx.clearRect(0, 0, width, height);
+        for (var i in points) {
+            // detect points in range
+            if (Math.abs(getDistance(target, points[i])) < 4000) {
+                points[i].active = 0.3;
+                points[i].circle.active = 0.6;
+            } else if (Math.abs(getDistance(target, points[i])) < 20000) {
+                points[i].active = 0.1;
+                points[i].circle.active = 0.3;
+            } else if (Math.abs(getDistance(target, points[i])) < 40000) {
+                points[i].active = 0.02;
+                points[i].circle.active = 0.1;
+            } else {
+                points[i].active = 0;
+                points[i].circle.active = 0;
             }
+
+            drawLines(points[i]);
+            points[i].circle.draw();
         }
         requestAnimationFrame(animate);
     }
