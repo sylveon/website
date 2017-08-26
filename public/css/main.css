@@ -21,8 +21,6 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
 	z-index: 1;
 }
 

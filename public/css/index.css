@@ -4,6 +4,8 @@
 
 .large-header {
 	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background);
+	background-size: cover;
+	background-position: center center;
 }
 
 #source {
