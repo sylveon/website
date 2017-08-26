@@ -12,6 +12,15 @@
 
         largeHeader = document.getElementById('large-header');
         largeHeader.style.height = height + 'px';
+
+        particleground(largeHeader, {
+            dotColor: '#fff',
+            lineColor: '#555555',
+            particleRadius: 6,
+            curveLines: true,
+            density: 9000,
+            proximity: 100
+        });
     }
 
     // Event handling

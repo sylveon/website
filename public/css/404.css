@@ -1,3 +1,7 @@
 .large-header {
 	background: #000;
 }
+
+.pg-canvas {
+	opacity: 0.15;
+}
