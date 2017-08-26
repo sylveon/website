@@ -12,11 +12,4 @@
 	position: fixed;
 	bottom: 1%;
 	right: 0.5%;
-	text-decoration: none;
-	color: #606060;
-	transition: all 500ms ease;
-}
-
-#source:hover {
-	color: #bababa;
 }
