@@ -37,17 +37,6 @@ body {
 	background: linear-gradient(#321a48, #192726);
 }
 
-body.is-loading *,
-body.is-loading *:before,
-body.is-loading *:after {
-	animation: none !important;
-	transition: none !important;
-}
-
-body.is-loading {
-	overflow-y: hidden;
-}
-
 
 /* Type */
 
@@ -260,11 +249,6 @@ h3 {
 	transition: opacity 1s ease, filter 1s ease;
 }
 
-body.is-loading #wrapper {
-	opacity: 0;
-	filter: blur(1px);
-}
-
 body.is-covered #wrapper {
 	filter: blur(3px);
 }
@@ -285,19 +269,4 @@ body.is-covered #wrapper {
 	#header {
 		padding: 4em 0 2em 0;
 	}
-}
-
-
-/* Loader */
-
-body:not(.is-loading) #loading {
-	display: none;
-}
-
- #loading {
-	display: flex;
-	height: 100vh;
-	align-items: center;
-	justify-content: center;
-	background: #321a48 !important;
 }
