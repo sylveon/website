@@ -52,7 +52,9 @@ $(function () {
 		card.href = imageFile;
 
 		var thumbnail = document.createElement("img");
-		thumbnail.src = imageFile;
+		thumbnail.height = 211;
+		thumbnail.setAttribute('data-src', imageFile);
+		thumbnail.className = "lazyload";
 
 		var name = document.createElement("h3");
 		name.textContent = theme;
