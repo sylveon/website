@@ -5,7 +5,9 @@
 	var elementsArray = [];
 
 	document.getElementById("total-number").textContent = themesArray.length;
-	themesArray.sort();
+	themesArray.sort(function (a, b) {
+		return a.localeCompare(b, {'sensitivity': 'base'});
+	});
 
 	// Auto-gen
 	themesArray.forEach(function (theme) {
