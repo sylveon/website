@@ -21,7 +21,6 @@
 
 		var card = document.createElement("a");
 		card.href = imageFile;
-		card.className = "card";
 
 		var thumbnail = document.createElement("img");
 		thumbnail.height = 211;
@@ -41,4 +40,4 @@
 	
 	new LuminousGallery(elementsArray);
 
-});
+})();
