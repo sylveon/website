@@ -1,4 +1,4 @@
-$(function () {
+(function () {
 
 	if (!!window.chrome) {
 		// Blur degrades performance on Firefox, so use it only on Chrome and friends.
