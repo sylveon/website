@@ -18,7 +18,7 @@
 		card.href = imageFile;
 
 		var thumbnail = document.createElement("img");
-		thumbnail.height = 211;
+		thumbnail.src = 'img/bw-placeholder.png';
 		thumbnail.setAttribute('data-src', imageFile);
 		thumbnail.className = "lazyload";
 
