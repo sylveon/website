@@ -249,7 +249,8 @@ h3 {
 	transition: opacity 1s ease, filter 1s ease;
 }
 
-body.is-covered #wrapper {
+/* See main.js */
+body.is-covered.chrome #wrapper {
 	filter: blur(3px);
 }
 
