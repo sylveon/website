@@ -12,7 +12,7 @@ SUCCESS=$(curl --silent -X DELETE "https://api.cloudflare.com/client/v4/zones/${
 
 if [[ "$SUCCESS" == "true" ]]
 then
-    return 0
+    exit 0
 else
-    return 1
+    exit 1
 fi

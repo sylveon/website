@@ -10,9 +10,6 @@ branches:
   only:
     - master
 
-install:
-  - npm install firebase-tools
-
 script:
   - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT} --only hosting --non-interactive
   - ./delete-changed-files.sh
