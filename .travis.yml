@@ -13,5 +13,4 @@ script:
   - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT} --only hosting --non-interactive
 
 after_success:
-  - sh get-changed-files.sh
-  - curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" -H "X-Auth-Key: ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" --data '{"files":`sh get-changed-files.sh | grep public/ | sed 's/public\//https:\/\/charlesmilette.net\//g' | jq -R -s -c 'split("\n")'`}'
+  - sh delete-changed-files.sh
