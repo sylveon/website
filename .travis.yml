@@ -1,6 +1,4 @@
 language: node_js
-node_js:
-  - "6.2.1"
 
 branches:
   only:
@@ -11,6 +9,4 @@ install:
 
 script:
   - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT} --only hosting --non-interactive
-
-after_success:
-  - sh delete-changed-files.sh
+  - ./delete-changed-files.sh

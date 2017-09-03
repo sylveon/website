@@ -9,8 +9,6 @@
 
 	new LuminousGallery(themes.map(renderTheme));
 
-	console.log("test2");
-
 })();
 
 function renderTheme(themeName, themeIndex) {
