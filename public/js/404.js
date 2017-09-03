@@ -1,6 +1,6 @@
 (function () {
 
-    var width, height, largeHeader = true;
+    let width, height, largeHeader = true;
 
     // Main
     initHeader();
