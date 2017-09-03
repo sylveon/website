@@ -9,7 +9,7 @@
 
 	new LuminousGallery(themes.map(renderTheme));
 
-	console.log("test");
+	console.log("test2");
 
 })();
 
