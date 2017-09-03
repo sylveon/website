@@ -1,12 +1,8 @@
 #!/bin/sh
 
-BUILD_ID=$(curl --silent https://api.travis-ci.org/repos/sylveon/website | jq .last_build_id)
+BUILD_NUMBER=$(curl --silent https://api.travis-ci.org/repos/sylveon/website | jq -r .last_build_number)
 
-echo $BUILD_ID
-
-COMMIT_SHA=$(curl --silent https://api.travis-ci.org/builds/$BUILD_ID | jq -r .commit)
-
-echo $COMMIT_SHA
+COMMIT_SHA=$(curl --silent https://api.travis-ci.org/repos/sylveon/website/builds?number=$(( BUILD_NUMBER - 1 )) | jq -r .[0].commit)
 
 JSON_ARRAY_FILES_TO_DELETE=$(git diff --name-only $COMMIT_SHA HEAD | grep public/ | sed 's/public\//https:\/\/charlesmilette.net\//g' | jq -R -s -c 'split("\n")')
 
