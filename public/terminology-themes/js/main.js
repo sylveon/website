@@ -14,6 +14,8 @@
 
 	new LuminousGallery(themes.map(renderTheme), {}, options);
 
+	document.body.classList.add("loaded");
+
 })();
 
 function blurWrapper() {

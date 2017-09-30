@@ -35,7 +35,11 @@ body {
 }
 
 body {
-	background: linear-gradient(#321a48, #192726);
+	background: #321a48;
+}
+
+body.loaded {
+	background: linear-gradient(#321a48, #192726) !important;
 }
 
 
