@@ -223,3 +223,10 @@ h3 {
 		padding: 4em 0 2em 0;
 	}
 }
+
+
+/* Various */
+
+.blur {
+	filter: blur(10pt) !important;
+}

@@ -7,9 +7,22 @@
 		return a.localeCompare(b, {'sensitivity': 'base'});
 	});
 
-	new LuminousGallery(themes.map(renderTheme));
+	var options = {
+		onOpen: blurWrapper,
+		onClose: unblurWrapper
+	};
+
+	new LuminousGallery(themes.map(renderTheme), {}, options);
 
 })();
+
+function blurWrapper() {
+	document.getElementById("wrapper").classList.add("blur");
+}
+
+function unblurWrapper() {
+	document.getElementById("wrapper").classList.remove("blur");
+}
 
 function renderTheme(themeName, themeIndex) {
 	let imageFile = 'img/' + themeName + '.png';
