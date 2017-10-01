@@ -7,7 +7,9 @@
 		return a.localeCompare(b, {'sensitivity': 'base'});
 	});
 
-	var options = {
+	let options = {
+		caption: getCaption,
+		closeOnScroll: true,
 		onOpen: blurWrapper,
 		onClose: unblurWrapper
 	};
@@ -17,6 +19,10 @@
 	document.body.classList.add("loaded");
 
 })();
+
+function getCaption(element) {
+	return element.textContent;
+}
 
 function blurWrapper() {
 	document.getElementById("wrapper").classList.add("blur");
