@@ -13,3 +13,36 @@
 	bottom: 1%;
 	right: 0.5%;
 }
+
+#links {
+	position: relative;
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0;
+	padding-bottom: 1rem;
+}
+
+
+#links::after {
+	content: "";
+	width: 150px;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	transform: translateX(-50%);
+}
+
+#other-places a {
+	margin-right: 2.5px;
+	margin-left:  2.5px;
+}
+
+.fa-github:hover {
+	color: #333;
+}
+
+.fa-gitlab:hover {
+	color: #fc6d26;
+}
