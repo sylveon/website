@@ -17,7 +17,7 @@ body {
 	font-family: 'Raleway', Calibri, Arial, sans-serif;
 }
 
-.large-header {
+#large-header {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
