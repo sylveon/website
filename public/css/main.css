@@ -24,6 +24,23 @@ body {
 	z-index: 1;
 }
 
+.bottom-line {
+	position: relative;
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0;
+	padding-bottom: 1rem;
+}
+
+.bottom-line::after {
+	content: "";
+	background: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	transform: translateX(-50%);
+}
+
 .main-title {
 	position: relative;
 	margin: 0;
@@ -41,14 +58,8 @@ body {
 }
 
 .main-title::after {
-	content: "";
 	width: 300px;
 	height: 2px;
-	background: rgba(255, 255, 255, 0.5);
-	position: absolute;
-	left: 50%;
-	bottom: 0px;
-	transform: translateX(-50%);
 }
 
 .center {
