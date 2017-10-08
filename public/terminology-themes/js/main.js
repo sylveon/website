@@ -26,6 +26,9 @@ function renderTheme(themeName, themeIndex) {
 
 	let thumbnail = document.createElement("img");
 	thumbnail.setAttribute('data-src', imageFile);
+	thumbnail.width = 642;
+	thumbnail.height = 390;
+	thumbnail.src = "img/transparent.gif";
 	thumbnail.className = "lazyload";
 
 	let name = document.createElement("h3");

@@ -131,6 +131,7 @@ h3 {
 	transition: opacity 1s ease;
 	display: block;
 	width: 100%;
+	height: auto;
 	opacity: 0;
 }
 
