@@ -110,6 +110,9 @@ h3 {
 }
 
 .thumbnails a {
+	background-image: url("../img/bw-placeholder.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
 	transition: all 0.2s ease;
 	border-bottom: none;
 	display: block;
@@ -125,8 +128,14 @@ h3 {
 }
 
 .thumbnails a img {
+	transition: opacity 1s ease;
 	display: block;
 	width: 100%;
+	opacity: 0;
+}
+
+.thumbnails a img.lazyloaded {
+	opacity: 1;
 }
 
 .thumbnails a h3 {
@@ -211,7 +220,7 @@ h3 {
 	padding: 0 2em;
 	opacity: 1;
 	filter: none;
-	transition: opacity 1s ease, filter 1s ease;
+	transition: opacity 1s ease, filter 0.2s ease;
 }
 
 

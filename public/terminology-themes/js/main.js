@@ -25,7 +25,6 @@ function renderTheme(themeName, themeIndex) {
 	card.href = imageFile;
 
 	let thumbnail = document.createElement("img");
-	thumbnail.src = 'img/bw-placeholder.png';
 	thumbnail.setAttribute('data-src', imageFile);
 	thumbnail.className = "lazyload";
 
