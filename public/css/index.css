@@ -1,5 +1,5 @@
 :root {
-	--background: url('../img/bg-1.jpg');
+	--background: url("../img/bg-1.jpg");
 }
 
 #large-header {

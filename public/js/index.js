@@ -15,10 +15,10 @@
             y: height / 2
         };
 
-        largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height + 'px';
+        largeHeader = document.getElementById("large-header");
+        largeHeader.style.height = height + "px";
         let bgNumber = Math.floor(Math.random() * 3);
-        largeHeader.style.setProperty('--background', 'url(../img/bg-' + bgNumber + '.jpg');
+        largeHeader.style.setProperty("--background", "url(../img/bg-" + bgNumber + ".jpg");
 
         let source = document.getElementById("source");
         let author = document.getElementById("author");
@@ -38,10 +38,10 @@
                 break;
         }
 
-        canvas = document.getElementById('canvas');
+        canvas = document.getElementById("canvas");
         canvas.width = width;
         canvas.height = height;
-        ctx = canvas.getContext('2d');
+        ctx = canvas.getContext("2d");
 
         // create points
         points = [];
@@ -91,17 +91,17 @@
 
         // assign a circle to each point
         for (let i in points) {
-            let c = new Circle(points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)');
+            let c = new Circle(points[i], 2 + Math.random() * 2, "rgba(255,255,255,0.3)");
             points[i].circle = c;
         }
     }
 
     // Event handling
     function addListeners() {
-        if (!('ontouchstart' in window)) {
-            window.addEventListener('mousemove', mouseMove);
+        if (!("ontouchstart" in window)) {
+            window.addEventListener("mousemove", mouseMove);
         }
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
     }
 
     function mouseMove(e) {
@@ -120,7 +120,7 @@
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
-        largeHeader.style.height = height + 'px';
+        largeHeader.style.height = height + "px";
         canvas.width = width;
         canvas.height = height;
     }
@@ -175,7 +175,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(156,217,249,' + p.active + ')';
+            ctx.strokeStyle = "rgba(156,217,249," + p.active + ")";
             ctx.stroke();
         }
     }
@@ -194,7 +194,7 @@
             if (!_this.active) return;
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'rgba(156,217,249,' + _this.active + ')';
+            ctx.fillStyle = "rgba(156,217,249," + _this.active + ")";
             ctx.fill();
         };
     }
