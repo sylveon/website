@@ -11,5 +11,6 @@ branches:
     - master
 
 script:
+  - jshint public
   - firebase deploy --token=${FIREBASE_API_TOKEN} --project ${FIREBASE_PROJECT} --only hosting --non-interactive
   - ./delete-changed-files.sh
