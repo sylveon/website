@@ -1,14 +1,14 @@
 "use strict";
-/* globals LuminousGallery: false */
+/* globals LuminousGallery */
 
 (() => {
 	fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img").then(r =>
 		r.json()
-	).then(unparsedThemes => {
-		let themes = unparsedThemes.filter(value =>
-			!(value.name == "transparent.gif" || value.name == "bw-placeholder.png" || value.type != "file")
-		).map(theme =>
-			theme.name.replace(".png", "")
+	).then(t => {
+		let themes = t.filter(v =>
+			!(v.name == "transparent.gif" || v.name == "bw-placeholder.png" || v.type != "file")
+		).map(f =>
+			f.name.replace(".png", "")
 		).sort((a, b) =>
 			a.localeCompare(b, {
 				"sensitivity": "base"
