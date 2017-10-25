@@ -68,11 +68,11 @@
             let p1 = points[i];
             for (let j = 0; j < points.length; j++) {
                 let p2 = points[j];
-                if (p1 != p2) {
+                if (p1 !== p2) {
                     let placed = false;
                     for (let k = 0; k < 5; k++) {
                         if (!placed) {
-                            if (closest[k] == undefined) {
+                            if (closest[k] === undefined) {
                                 closest[k] = p2;
                                 placed = true;
                             }
@@ -173,7 +173,9 @@
 
     // Canvas manipulation
     function drawLines(p) {
-        if (!p.active) return;
+        if (!p.active) {
+            return;
+        }
         for (let i in p.closest) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -194,7 +196,9 @@
         })();
 
         this.draw = function () {
-            if (!_this.active) return;
+            if (!_this.active) {
+                return;
+            }
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
             ctx.fillStyle = "rgba(156,217,249," + _this.active + ")";

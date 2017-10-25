@@ -5,7 +5,9 @@
     },
     "jshintConfig": {
         "browser": true,
+        "curly": true,
         "esversion": 6,
+        "eqeqeq": true,
         "strict": "global"
     }
 }

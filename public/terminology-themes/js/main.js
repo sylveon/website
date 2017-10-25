@@ -6,7 +6,7 @@
 		r.json()
 	).then(t => {
 		let themes = t.filter(v =>
-			!(v.name == "transparent.gif" || v.name == "bw-placeholder.png" || v.type != "file")
+			!(v.name === "transparent.gif" || v.name === "bw-placeholder.png" || v.type !== "file")
 		).map(f =>
 			f.name.replace(".png", "")
 		).sort((a, b) =>
