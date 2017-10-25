@@ -1,8 +1,11 @@
+"use strict";
+/* globals LuminousGallery: false */
+
 (() => {
 	fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img").then(r =>
 		r.json()
 	).then(unparsedThemes => {
-		var themes = unparsedThemes.filter(value =>
+		let themes = unparsedThemes.filter(value =>
 			!(value.name == "transparent.gif" || value.name == "bw-placeholder.png" || value.type != "file")
 		).map(theme =>
 			theme.name.replace(".png", "")

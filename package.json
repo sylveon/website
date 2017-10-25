@@ -1,5 +1,10 @@
 {
     "dependencies": {
         "firebase-tools": "*"
+    },
+    "jshintConfig": {
+        "browser": true,
+        "esversion": 6,
+        "strict": "global"
     }
 }
