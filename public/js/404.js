@@ -1,4 +1,7 @@
-(function () {
+"use strict";
+/* globals particleground */
+
+(() => {
 
     let width, height, largeHeader = true;
 

@@ -1,4 +1,7 @@
-(function () {
+"use strict";
+/* globals TweenLite, Circ */
+
+(() => {
 
     let width, height, largeHeader, canvas, ctx, points, target = true;
 
@@ -33,7 +36,7 @@
                 source.href = "https://robcartwrightphotography.wordpress.com/2011/11/29/365-360-tuesday-29-november-neon-street/";
                 type.textContent = "Picture";
                 break;
-            case 1:
+            case 1: /* falls through */
             default:
                 break;
         }
@@ -64,8 +67,8 @@
             let closest = [];
             let p1 = points[i];
             for (let j = 0; j < points.length; j++) {
-                let p2 = points[j]
-                if (!(p1 == p2)) {
+                let p2 = points[j];
+                if (p1 != p2) {
                     let placed = false;
                     for (let k = 0; k < 5; k++) {
                         if (!placed) {
@@ -105,7 +108,7 @@
     }
 
     function mouseMove(e) {
-        let posx = posy = 0;
+        let posx, posy = 0;
         if (e.pageX || e.pageY) {
             posx = e.pageX;
             posy = e.pageY;
