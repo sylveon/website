@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILES_TO_DELETE=$(git diff --exit-code --name-only --diff-filter=a "${TRAVIS_COMMIT_RANGE}" public/ | sed "s/public\\//https:\\/\\/charlesmilette.net\\//g" | head -c -1 | jq -R -s -c 'split("\n")')
+FILES_TO_DELETE=$(git diff --exit-code --name-only --diff-filter=a "${TRAVIS_COMMIT_RANGE}" public/ | sed 's/public\//https:\/\/charlesmilette.net\//g' | head -c -1 | jq -R -s -c 'split("\n")')
 
 if [[ "${PIPESTATUS[0]}" != "1" ]]
 then
