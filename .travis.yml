@@ -6,6 +6,14 @@ cache:
   directories:
     - "node_modules"
 
+before_install:
+  - npm install -g firebase-tools
+# https://github.com/travis-ci/travis-ci/issues/8637
+
+script:
+  - jshint public
+  - shellcheck delete-changed-files.sh
+
 deploy:
   provider: firebase
   token:
@@ -13,9 +21,6 @@ deploy:
   project:
     secure: "E5pODGlDdzqZifLfh9yCv5VF3SNpq18TfalnghElMNZpuHPt/UzUMTWXx24q5qD9fgM41OHNQO6KUtFgvOVNB3KIcvnrgIGolTGSZzHaOAkHtRXmEK5QlPC8WTKFYI+9GzA8+d3dpww3yQL/qwGy5ViSfA0s5mVXpn+xXlLa7pUuijI1Xxh/OZIOmtAIAalKUXXZc2C4WOG2AbuRiFPkyOTbuy21CDL2uU27XMRcfzZyx4w7nzKz3X2/mhK4UdAOub7Foyx6NnfNsyT6C/z6++hGNCQVnL/xFlpsM8Ysg6W1leXszGby+vSkk0cPgevNVS1dGBtQB0kJXKNkM5rViE6jZCbi00UHEGCbj6HX0UjHQ4ppgbhglqhoLB/9BGuEg1R6H0mDugMZwsGhMn7bAZv784nNp5IQwiCjXLlOBPSJOSe6lJ1DwjLvl/RgY5O1bZGqNiYt8wXKOVt1gHDsnwkf2b0/oIebQkgAq0f9Ad1C0b0H7dcAHAk30FqZsKUnn+5yg8iZbwQadhzXoEI2aa9fdkjgov/hvjQQfmfYOTA4p4QgKr3LS2lyTD6Cl8VGQGzHWFgNIWduvF1dyRD33grQZ659kJuklhsIs82AdYtQRrmG0ljMUyJ9eEUMqfDLQ5mzmdGs0hnvLXwTnAl75fpyXgwaA5sjO1fsAB3fZ0M="
   message: "Travis CI deployment"
-
-script:
-  - jshint public
 
 after_deploy:
   - ./delete-changed-files.sh
