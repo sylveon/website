@@ -7,13 +7,14 @@ trim_trailing_whitespace = true
 indent_style =             tab
 indent_size =              4
 
-[.travis.yml]
+[{.travis.yml,LICENSE}]
 indent_style = space
-indent_size =  2
+
+[.travia.yml]
+indent_size = 2
 
 [LICENSE]
-indent_style = space
-indent_size =  4
+indent_size = 4
 
-[package-lock.json]
+[{package.json,package-lock.json}]
 insert_final_newline = true
