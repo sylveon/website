@@ -1,13 +1,13 @@
 {
-    "dependencies": {
-        "firebase-tools": "*",
-        "jshint": "*"
-    },
-    "jshintConfig": {
-        "browser": true,
-        "curly": true,
-        "esversion": 6,
-        "eqeqeq": true,
-        "strict": "global"
-    }
+	"dependencies": {
+		"firebase-tools": "*",
+		"jshint": "*"
+	},
+	"jshintConfig": {
+		"browser": true,
+		"curly": true,
+		"esversion": 6,
+		"eqeqeq": true,
+		"strict": "global"
+	}
 }
