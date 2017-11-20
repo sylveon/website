@@ -11,6 +11,7 @@ before_install:
 # https://github.com/travis-ci/travis-ci/issues/8637
 
 script:
+  - eclint check *
   - jshint public
   - shellcheck delete-changed-files.sh
 
