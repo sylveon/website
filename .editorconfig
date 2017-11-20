@@ -10,7 +10,7 @@ indent_size =              4
 [{.travis.yml,LICENSE}]
 indent_style = space
 
-[.travia.yml]
+[.travis.yml]
 indent_size = 2
 
 [LICENSE]
