@@ -9,4 +9,11 @@ indent_size =              4
 
 [.travis.yml]
 indent_style = space
-indent_size = 2
+indent_size =  2
+
+[LICENSE]
+indent_style = space
+indent_size =  4
+
+[package-lock.json]
+insert_final_newline = true
