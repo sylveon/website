@@ -240,6 +240,15 @@ h3 {
 }
 
 
+/* Footer */
+
+#footer {
+	font-size: 0.75em;
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+
 /* Various */
 
 .blur {
