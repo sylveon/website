@@ -1,21 +1,43 @@
-:root {
-	--background: url();
+body {
+	background-color: rgb(61, 61, 61);
 }
 
-body {
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background);
-	background-size: cover;
-	background-position: center center;
+#source,
+#back {
+	opacity: 0;
+}
+
+#source.loaded,
+#back.loaded {
+	transition: opacity 1s linear, all 500ms ease;
+	opacity: 1;
 }
 
 #source {
 	position: fixed;
 	bottom: 1%;
 	right: 0.5%;
+	font-weight: lighter;
 }
 
-#source:not(.loaded) {
-	display: none;
+#back-wrapper {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+}
+
+#back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
+	filter: brightness(50%);
 }
 
 #links::after {
