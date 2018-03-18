@@ -8,6 +8,10 @@
 	user-select: none;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background: #fff;
 	color: #383a3c;
@@ -15,13 +19,8 @@ body {
 	font-size: 1em;
 	line-height: 1.25;
 	font-family: "Raleway", Calibri, Arial, sans-serif;
-}
-
-#large-header {
-	position: relative;
-	width: 100%;
+	min-height: 100%;
 	overflow: hidden;
-	z-index: 1;
 }
 
 .bottom-line {
@@ -65,7 +64,7 @@ body {
 	text-align: center;
 }
 
-a{
+a {
 	text-decoration: none;
 	color: rgba(255, 255, 255, 0.7);
 	transition: all 500ms ease;

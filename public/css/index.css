@@ -1,8 +1,8 @@
 :root {
-	--background: url("../img/bg-1.jpg");
+	--background: url();
 }
 
-#large-header {
+body {
 	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background);
 	background-size: cover;
 	background-position: center center;
@@ -12,6 +12,10 @@
 	position: fixed;
 	bottom: 1%;
 	right: 0.5%;
+}
+
+#source:not(.loaded) {
+	display: none;
 }
 
 #links::after {

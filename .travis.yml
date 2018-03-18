@@ -6,6 +6,10 @@ cache:
   directories:
     - "node_modules"
 
+env:
+  global:
+    - secure: "Gw5TM9DlSRdkIdtopbGDVs7v/B3YWXo2NsXHJvTGWk5KkQKWN8Rk2Rn3SAxfX67h15i1lGGIjt84bPZuPczVAhavQYkAp+eN3XsmiKlS8m9vNeKj3yqtquwPcv73/o4p0WKFSk14iqQrCMp/pZ+mGBX/p0RfyArGtRlvvSDqA59SefCCkJcUfJcC9BU0Z2eDPEwicGiZT5i0yWr56heHM36+B/PBEszuDFmrrXnAgtMVZ1+NOHGCBmNeEsHBaqTsQna8P0WIdw8rHsXyzqDfJMZpZUObP4rNGo8G0+svy2cyKHDdCsVWZdsXtPJRDYFzUYRJNoylGZ+vJfHZTFkiiTbT4KIda6/vwHjdmkT4vVNi4WW+SEmEHViXd4Vfxa0vXXa/Nl9hYwPGuG/9n2Pu4JSllBDyQnt3uPy6ho3xEVDvzHKN3x/sE8qs5uRyitYOvCg+0R0FGFGxRcjxJG0uWW4m2GZijsdumYmBQuDaFbxBsiWaFrGE+pZEQhaSoItGcp+oHmxtIFcZFUWe3qBpSM8J+tdNRy25/sM7CZriru4XeaixivL2N9Y7upSemHHH8ddA2Ts8yepWfOnXYcahsQdjInGvIY3+UZXPH7pItzebnGivfK2vj6cdFL3dwQnL3XmSRNScDu/vvZuYNwSx4OyMOgb5mW/0FltZ59/sMBc="
+
 before_install:
   - npm install -g firebase-tools
 # https://github.com/travis-ci/travis-ci/issues/8637
@@ -14,8 +18,11 @@ script:
   - eclint check *
   - jshint public
   - shellcheck delete-changed-files.sh
+  - shellcheck put-secrets.sh
+  - ./put-secrets.sh
 
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: "pCCm1hV1bjzYOPZWRMnA5NAPcyu/uq9GnUhR5GwaS49ENcmRqQxhGQza65RvT/3/im9D1pIeqaX0Ed5AlJvL5qYkek2NSCIr8LzDR13pdqaxzeCCFctayT56KoqHyHKrBC719JPqsnGNRQbE4M612R7KNwdanNQuZhis12DkGDpCnSpTcJBzu7YMerQj9pJ89hSm4tSzcU1uzuLMtmwaAuHfz2QUu28J9xUc2UuNQhfw1+fKy4gZBvvKzg/m2f8/2yRzXts3XZVvBYrvwAnIh6ZjfQgk9oeGrHHrZTgtgTF1RNXYNc9gnado97k+xDzrd/tQ5NciQtUI4pbxTftyVxq73DonQwKL0eBkK2+vGbLB7xx6nbP5/KeGN00QiWvxrxLccZ6Fu+yfkdVhqelRqSA8KP499QN1fTslRRqrVp6uk+sxUgFaov9A4eQEvsVtlxsXRP5iOnV2a1XXK1L6axzFHFIpys5LdFr3lyeAlBOAXf4UMX465LK1vamh8lJ/1+ArZTb/ONk7+df5T9RJ6hCMq9AcNCUA3cV0yGG56TJc5tsVM2Jp8hL8/mKJRNxRuy7nbzJ2DVYj+eYiYfGuYxRnSOzXZBGy94pVZQPIglHIYAni+VV91mfDyRXVRownMkpG5irgoxAxPP60PYuSDi9s4IO41XFLtXpwHdTGHVk="
