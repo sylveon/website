@@ -1,0 +1,62 @@
+﻿==================================================================
+https://keybase.io/sylve0n
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://charlesmilette.net
+  * I am sylve0n (https://keybase.io/sylve0n) on keybase.
+  * I have a public key with fingerprint 5664 9C67 BEBE 739F 8A2E  C319 1A5A E813 77AD 973A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0116725648a1915f8064cd116a681f915b470c50ce3414524033791e0adb1426e1810a",
+      "fingerprint": "56649c67bebe739f8a2ec3191a5ae81377ad973a",
+      "host": "keybase.io",
+      "key_id": "1a5ae81377ad973a",
+      "kid": "0116725648a1915f8064cd116a681f915b470c50ce3414524033791e0adb1426e1810a",
+      "uid": "96497b584c70141408fbcd6a088d1d19",
+      "username": "sylve0n"
+    },
+    "service": {
+      "hostname": "charlesmilette.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1524423279,
+  "expire_in": 157680000,
+  "prev": "f6e0c3334f51eb594b0cde5d652da5299f6f43477efce666300620e80c4cbf86",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUj1oFEEY3cQIMRAQhUOFgI6FzXHM7PzuFWIdsRUM4jE/394tuexedvcuhpBS
+jNpYCAox2NhqYWWVwoCgsbEVxSrENFYiiIrOhKSzdJph3rz3vvd9fPenj0STjTNz
+X04uPXvYHtveM9Hcxw+3VpAp3DJqr6B52L+g76CqO/OZQ22ECREy5oIpTRLCU4UF
+s86DWiiSesQwiS3HFigjjMcMUyoTAlg7Q1gsgCiCNWqiNMu7UA7KLK+9LReCJVZI
+AwYkTVKlY7DUV9BcgyJUSu0SSYOwV1RB4cMZXUErKzzmH539eP/g/+fcw327xMeV
+hitmJSZegFVqrBMaK+WII0kgVlDmegE8u1rujwDnaLWJPDjKLIS5hkYOCLanyz5U
+C1kf6hpaOdTeYFAWdWGLvv/v1fWgagd9vTwIgiUwnQOrjsly54fpFSMoq6zIUZt4
+pq2z4E18LyymsUyaCG4OshI6WWBwKRT2J9SBkbdMRQewpZSylBMwPGEGWwfcCR47
+zeMkSUXKKJMSUgtCCIqxiDEobJk1qRIodLeYF6jtS9W6GxrPurmuhyWg1bPTU2vD
+iagxGc00zk1cdY+7m5vVk7utrdOHG3h0PKxfNHXs+CGy/WYs2rrx+kT86cWp2cbO
+0trnlxce7c1ef/CbvXp7+covsrv+LvrTe3/n61M19vzbxcbuxo/vl3bOrzdmfnav
+bdxbHI33bk/9BQ==
+=TknF
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sylve0n
+
+==================================================================
