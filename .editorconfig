@@ -7,14 +7,11 @@ trim_trailing_whitespace = true
 indent_style =             tab
 indent_size =              4
 
-[{.travis.yml,LICENSE}]
+[{.travis.yml,LICENSE,public/keybase.txt}]
 indent_style = space
 
-[.travis.yml]
+[{.travis.yml,public/keybase.txt}]
 indent_size = 2
 
-[LICENSE]
-indent_size = 4
-
-[{package.json,package-lock.json}]
+[{package.json,package-lock.json,public/keybase.txt}]
 insert_final_newline = true
