@@ -19,7 +19,7 @@ before_install:
 
 script:
   - eclint check *
-  - jshint public
+#  - jshint public
   - shellcheck delete-changed-files.sh
   - shellcheck put-secrets.sh
   - ./put-secrets.sh
