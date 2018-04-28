@@ -3,9 +3,8 @@
 
 (async () => {
 	const data = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img");
-	const json = await data.json();
 
-	const themes = json
+	const themes = (await data.json())
 		.filter(f => !(f.name === "transparent.gif" || f.name === "bw-placeholder.png" || f.type !== "file"))
 		.map(f => f.name.replace(".png", ""))
 		.sort((a, b) => a.localeCompare(b, { "sensitivity": "base" }));
