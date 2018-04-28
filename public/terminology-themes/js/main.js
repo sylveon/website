@@ -1,47 +1,41 @@
 "use strict";
 /* globals LuminousGallery */
 
-(() => {
-	fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img").then(r =>
-		r.json()
-	).then(t => {
-		let themes = t.filter(v =>
-			!(v.name === "transparent.gif" || v.name === "bw-placeholder.png" || v.type !== "file")
-		).map(f =>
-			f.name.replace(".png", "")
-		).sort((a, b) =>
-			a.localeCompare(b, {
-				"sensitivity": "base"
-			})
-		);
+(async () => {
+	const data = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img");
+	const json = await data.json();
 
-		document.getElementById("total-number").textContent = themes.length;
+	const themes = t
+		.filter(f => !(f.name === "transparent.gif" || f.name === "bw-placeholder.png" || f.type !== "file"))
+		.map(f => f.name.replace(".png", ""))
+		.sort((a, b) => a.localeCompare(b, { "sensitivity": "base" }));
 
-		new LuminousGallery(themes.map(renderTheme), {}, {
-			caption: e => e.textContent,
-			closeOnScroll: true,
-			onOpen: () => document.getElementById("wrapper").classList.add("blur"),
-			onClose: () => document.getElementById("wrapper").classList.remove("blur")
-		});
+	document.getElementById("total-number").textContent = themes.length;
 
-		document.body.classList.add("loaded");
+	new LuminousGallery(themes.map(renderTheme), {}, {
+		caption: e => e.textContent,
+		closeOnScroll: true,
+		onOpen: () => document.getElementById("wrapper").classList.add("blur"),
+		onClose: () => document.getElementById("wrapper").classList.remove("blur")
 	});
+
+	document.body.classList.add("loaded");
 })();
 
 function renderTheme(themeName, themeIndex) {
-	let imageFile = "img/" + themeName + ".png";
+	const imageFile = "img/" + themeName + ".png";
 
-	let card = document.createElement("a");
+	const card = document.createElement("a");
 	card.href = imageFile;
 
-	let thumbnail = document.createElement("img");
+	const thumbnail = document.createElement("img");
 	thumbnail.setAttribute("data-src", imageFile);
 	thumbnail.width = 642;
 	thumbnail.height = 390;
 	thumbnail.src = "img/transparent.gif";
 	thumbnail.className = "lazyload";
 
-	let name = document.createElement("h3");
+	const name = document.createElement("h3");
 	name.textContent = themeName;
 
 	card.appendChild(thumbnail);
