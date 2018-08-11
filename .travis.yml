@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-  - node
+node_js: "node"
 
 cache:
   directories:
@@ -13,9 +12,9 @@ env:
     - secure: KSi9zGkjLUXUlhjpSu+l2Y88sDlquLXkeqRxaoTuOG5/1Ziu5TPYr9k2nFWZ//sGArmMACaqMQT088E4CJm+vN9YR+76QrjhmFYUAjOE/m9RLTIAJ7CRAL5SV2tJVYFSjwuSF2Z9sgwNmRaXu2nmZLfvfXLtE+ptS8VsN7BIwATBgT43YAgFlOxaqbsiweHuqvViw0snZlDiLO8m1ag+QrmuVuiuTy9flOFOTSzq6zjTTRnk0VUfzYY5RofHPSGTUBsB3FQxYw77/yuYIDAv4GJh3mrs+G7mZTtmDpS/n7Xcj1FtFDiUQeXuLHKU2qxYHamPBZqFRCTc9uZUq1JK+q5eGxBDkS0VNQIIfHiC3Pq+1NICzk6HSin4aEfMRp5WJrpLAskR/4GyUIUVmxBDXnqF9vLoNIk91a8s7NPYSZBKk6y74acBo9jAeY9XnkRp2eF2/6nEqc7bVZzzMEd4c0V0e6OnLxMKuTWaX1DFnNI7Q9ns0IEFnq2/66LwpDXtLxGbf5epyHmXocBA86o88kIMirhi+Kxf0B+lgHXOgHcgMi9uUrrfJzTjXy/nzXE0T7TyYoa6E0uBAP+t5soz5plxm4NFGTGdtgEwH09BXHQ/QjH9tOfM2IDq0A/IvQ7iN5f6xpmjmS4sTK5WxIQbQNqbEmIydIWx2cvplnkaC30=
     - secure: iES4odQ4uu81rKczt+IY6/hjul8wsJ5TF9vhqqnxf/75ftPD3ek3AJRFsYU7J7gwHyCuEe2TXb1eUCLKrL3LTctOdcWD99C0Rc8R4JWeMNY7iRycWq8qjZglFRqZXBWFs+KpvjIefVJtLkWOd3uOkCQj0tLsJ5Ht2EUI93fEuPSJZS4h8RFFx87HVaytURykhxZoxJIxdo/XPbLQN3Q5K9fJnu4cnuMXx4RsDai6tb6EP3fRKH4Xq5mHbJ6eOhFZxdt09BsJFgTZJnihKpbXXFN507SDB5oAWjOUkogGUVcpe82ZD33BmvtDFsAKpupWXx2h6p1pWhSEHW79ibQ1uyobrA4WgMQlVPohl8fr5ePDeuPygz9VIWi3pn5fIQ/RoAj1huPcp/R5/VgS2hVB6DO3mfJ7fUnRY9S8Jn80VO5ujKohETot/33S/ddT+702cAbg+FbK41hJqwWo472qYiYvJ3rfifSu/IYrkRJ4e/uN8plqqfcQmkpQlQbw9EKZzqgIqVbWoBZ9C8uTUJBrZJ2RiU0Z5toOtl/W5/QR86oUUXSapw9bj2mlIdnMRPle9LhReLA3zrQ/1EPTvcHFp7Xdf6ERg85UQYVqxwTJ/OXeUQd99n52ife9l1Xi5rkInqlAnOLV9xUF8CVQcjpyJ9wI9FvSAwhxsNI2+dmNmzQ=
 
+# https://github.com/travis-ci/travis-ci/issues/8637
 before_install:
   - npm install -g firebase-tools
-# https://github.com/travis-ci/travis-ci/issues/8637
 
 script:
   - eclint check *
