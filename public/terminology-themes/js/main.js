@@ -2,9 +2,9 @@
 /* globals LuminousGallery */
 
 (async () => {
-	const data = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img");
+	const data = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img").then(r => r.json());
 
-	const themes = (await data.json())
+	const themes = data
 		.filter(f => !(f.name === "transparent.gif" || f.name === "bw-placeholder.png" || f.type !== "file"))
 		.map(f => f.name.replace(".png", ""))
 		.sort((a, b) => a.localeCompare(b, { "sensitivity": "base" }));
@@ -39,7 +39,7 @@ function renderTheme(themeName, themeIndex) {
 
 	card.appendChild(thumbnail);
 	card.appendChild(name);
-	document.getElementById("pics-" + Math.round(themeIndex / 3 % 1 * 3 + 1)).appendChild(card);
+	document.getElementById(`pics-${(themeIndex % 3) + 1}`).appendChild(card);
 
 	return card;
 }
