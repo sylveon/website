@@ -1,9 +1,9 @@
 "use strict";
-/* globals particleground */
+/* globals Particle */
 
 (() => {
 
-	particleground(document.body, {
+	new Particle(document.body, {
 		dotColor: "#fff",
 		lineColor: "#555555",
 		particleRadius: 6,
