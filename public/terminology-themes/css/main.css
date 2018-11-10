@@ -32,18 +32,19 @@ a:hover {
 	border-bottom-color: transparent;
 }
 
+ul {
+	padding: 0;
+	list-style: none;
+}
+
 header {
 	text-align: center;
 }
 
 #thumblist {
-	padding: 0;
-
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
-
-	list-style: none;
 }
 
 #thumblist > * {
@@ -82,6 +83,11 @@ header {
 #thumblist h3 {
 	margin: 0;
 	padding: 1em;
+}
+
+.lum-img {
+	box-shadow: 0 0 3em rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
 }
 
 footer {
