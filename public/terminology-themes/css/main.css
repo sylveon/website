@@ -9,12 +9,12 @@ body.loaded {
 	background: linear-gradient(#321a48, #192726);
 }
 
-#wrapper {
+#blur-wrapper {
 	transition: filter 0.2s ease;
 	filter: none;
 }
 
-#wrapper.blur {
+#blur-wrapper.blur {
 	filter: blur(10pt);
 }
 
@@ -67,7 +67,7 @@ header {
 	background-color: rgba(255, 255, 255, 0.25);
 }
 
-#thumblist a {
+#thumblist a, .github-fork-ribbon {
 	border-bottom: none;
 }
 
@@ -88,6 +88,10 @@ header {
 .lum-img {
 	box-shadow: 0 0 3em rgba(0, 0, 0, 0.25);
 	border-radius: 4px;
+}
+
+.github-fork-ribbon:before {
+	background-color: #333;
 }
 
 footer {

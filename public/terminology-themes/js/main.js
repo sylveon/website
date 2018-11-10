@@ -14,8 +14,8 @@
 	new LuminousGallery(themes.map(renderTheme), {}, {
 		caption: e => e.textContent,
 		closeOnScroll: true,
-		onOpen: () => document.getElementById("wrapper").classList.add("blur"),
-		onClose: () => document.getElementById("wrapper").classList.remove("blur")
+		onOpen: () => document.getElementById("blur-wrapper").classList.add("blur"),
+		onClose: () => document.getElementById("blur-wrapper").classList.remove("blur")
 	});
 
 	document.body.classList.add("loaded");
