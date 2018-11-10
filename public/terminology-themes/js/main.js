@@ -21,7 +21,7 @@
 	document.body.classList.add("loaded");
 })();
 
-function renderTheme(themeName, themeIndex) {
+function renderTheme(themeName) {
 	const imageFile = "img/" + themeName + ".png";
 
 	const card = document.createElement("a");
@@ -29,8 +29,8 @@ function renderTheme(themeName, themeIndex) {
 
 	const thumbnail = document.createElement("img");
 	thumbnail.setAttribute("data-src", imageFile);
-	thumbnail.width = 642;
-	thumbnail.height = 390;
+	thumbnail.width = 642 * 0.8;
+	thumbnail.height = 390 * 0.8;
 	thumbnail.src = "img/transparent.gif";
 	thumbnail.className = "lazyload";
 
@@ -39,7 +39,10 @@ function renderTheme(themeName, themeIndex) {
 
 	card.appendChild(thumbnail);
 	card.appendChild(name);
-	document.getElementById(`pics-${(themeIndex % 3) + 1}`).appendChild(card);
+
+	const item = document.createElement("li");
+	item.appendChild(card);
+	document.getElementById("thumblist").appendChild(item);
 
 	return card;
 }
