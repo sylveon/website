@@ -1,7 +1,6 @@
 "use strict";
 
 (async () => {
-
 	const clientId = atob("%{id}");
 	const width    = window.screen.width;
 	const height   = window.screen.height;
@@ -26,5 +25,4 @@
 	back.src = image.urls.custom;
 	source.href = image.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral";
 	document.getElementById("author").textContent = image.user.name ? image.user.name : image.user.username;
-
 })();

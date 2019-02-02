@@ -2,16 +2,17 @@
 /* globals LuminousGallery */
 
 (async () => {
-	const data = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img").then(r => r.json());
-
-	const themes = data
-		.filter(f => !(f.name === "transparent.gif" || f.name === "bw-placeholder.png" || f.type !== "file"))
-		.map(f => f.name.replace(".png", ""))
-		.sort((a, b) => a.localeCompare(b, { "sensitivity": "base" }));
+	const themes = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img")
+		.then(r => r.json())
+		.then(d => d
+			.filter(f => f.name !== "bw-placeholder.png" && f.type === "file")
+			.map(f => f.name.replace(".png", ""))
+			.sort((a, b) => a.localeCompare(b, { "sensitivity": "base" }))
+			.map(renderTheme));
 
 	document.getElementById("total-number").textContent = themes.length;
 
-	new LuminousGallery(themes.map(renderTheme), {}, {
+	new LuminousGallery(themes, {}, {
 		caption: e => e.textContent,
 		closeOnScroll: true,
 		onOpen: () => document.getElementById("blur-wrapper").classList.add("blur"),
@@ -31,14 +32,12 @@ function renderTheme(themeName) {
 	thumbnail.setAttribute("data-src", imageFile);
 	thumbnail.width = 642 * 0.8;
 	thumbnail.height = 390 * 0.8;
-	thumbnail.src = "img/transparent.gif";
 	thumbnail.className = "lazyload";
 
 	const name = document.createElement("h3");
 	name.textContent = themeName;
 
-	card.appendChild(thumbnail);
-	card.appendChild(name);
+	card.append(thumbnail, name);
 
 	const item = document.createElement("li");
 	item.appendChild(card);
