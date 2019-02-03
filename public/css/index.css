@@ -9,7 +9,7 @@ body {
 
 #source.loaded,
 #back.loaded {
-	transition: opacity 1s linear, all 500ms ease;
+	transition: opacity 1s linear, color 500ms ease;
 	opacity: 1;
 }
 
@@ -19,39 +19,22 @@ body {
 
 #source {
 	position: fixed;
-	bottom: 1%;
-	right: 0.5%;
+	bottom: 0;
+	right: 0;
+	margin: 10px;
+	text-align: right;
 	font-weight: lighter;
 }
 
-#back-wrapper {
-	position: fixed;
-	top: -50%;
-	left: -50%;
-	width: 200%;
-	height: 200%;
-}
-
 #back {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	min-width: 50%;
-	min-height: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
 	filter: brightness(50%);
 }
 
-#links::after {
-	width: 150px;
-	height: 1px;
-}
-
-#other-places a {
-	margin-right: 2.5px;
-	margin-left:  2.5px;
+.fa {
+	margin: 0 2.5px;
 }
 
 .fa-github:hover {

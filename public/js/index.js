@@ -6,7 +6,7 @@
 	const height   = window.screen.height;
 
 	let orientation;
-	if (width === height) {
+	if (Math.abs(width - height) <= 200) {
 		orientation = "squarish";
 	} else if (width > height) {
 		orientation = "landscape";

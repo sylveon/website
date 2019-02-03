@@ -21,53 +21,50 @@ body {
 	font-family: "Raleway", Calibri, Arial, sans-serif;
 	min-height: 100%;
 	overflow: hidden;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.bottom-line {
-	position: relative;
-	margin: 0;
-	margin-bottom: 1rem;
-	padding: 0;
-	padding-bottom: 1rem;
-}
-
-.bottom-line::after {
-	content: "";
-	background: rgba(255, 255, 255, 0.5);
+body > * {
 	position: absolute;
-	left: 50%;
-	bottom: 0px;
-	transform: translateX(-50%);
 }
 
-.main-title {
+body > .center {
+	position: relative;
+	text-align: center;
+}
+
+h1 {
 	color: #f9f1e9;
 	text-transform: uppercase;
 	font-size: 4.2em;
 	letter-spacing: 0.1em;
+	margin: 0 150px;
 }
 
-.main-title .thin {
+h1 > .thin {
 	font-weight: 200;
 }
 
-.main-title::after {
-	width: 300px;
-	height: 2px;
+hr {
+	margin: 1rem;
+	width: 150px;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.5);
+	border-width: 0.5px;
 }
 
-.center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate3d(-50%, -50%, 0);
-	text-align: center;
+h1 + hr {
+	width: 300px;
+	border-width: 1px;
 }
 
 a {
 	text-decoration: none;
 	color: rgba(255, 255, 255, 0.7);
-	transition: all 500ms ease;
+	transition: color 500ms ease;
 }
 
 a:hover {
