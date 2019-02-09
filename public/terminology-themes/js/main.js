@@ -2,10 +2,14 @@
 /* globals LuminousGallery */
 
 (async () => {
-	const themes = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img")
+	const distros = [...document.getElementById("distros").children];
+	const instructions = [...document.getElementById("instructions").children];
+
+	hideStuff(distros, instructions);
+
+	const themes = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img/themes")
 		.then(r => r.json())
 		.then(d => d
-			.filter(f => f.name !== "bw-placeholder.png" && f.type === "file")
 			.map(f => f.name.replace(".png", ""))
 			.sort((a, b) => a.localeCompare(b, { "sensitivity": "base" }))
 			.map(renderTheme));
@@ -18,12 +22,22 @@
 		onOpen: () => document.getElementById("blur-wrapper").classList.add("blur"),
 		onClose: () => document.getElementById("blur-wrapper").classList.remove("blur")
 	});
+	
+	distros.forEach((e, i) => e.onclick = () => {
+		if (e.classList.contains("active")) {
+			hideStuff(distros, instructions);
+		} else {
+			hideStuff(distros, instructions);
+			e.classList.add("active");
+			instructions[i].style.display = "";
+		}
+	});
 
 	document.body.classList.add("loaded");
 })();
 
 function renderTheme(themeName) {
-	const imageFile = "img/" + themeName + ".png";
+	const imageFile = `img/themes/${themeName}.png`;
 
 	const card = document.createElement("a");
 	card.href = imageFile;
@@ -44,4 +58,9 @@ function renderTheme(themeName) {
 	document.getElementById("thumblist").appendChild(item);
 
 	return card;
+}
+
+function hideStuff(distros, instructions) {
+	distros.forEach(d => d.classList.remove("active"));
+	instructions.forEach(i => i.style.display = "none");
 }

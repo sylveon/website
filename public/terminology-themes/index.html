@@ -24,6 +24,40 @@
 			<header>
 				<h1>Terminology Themes</h1>
 				<h2>Color schemes for <a href="https://www.enlightenment.org/about-terminology">Terminology</a> - Current theme count: <span id="total-number">...</span></h2>
+				<div id="distros">
+					<span>
+						<img src="img/distros/arch.png"><br>
+						Arch Linux
+					</span>
+					<span>
+						<img src="img/distros/gentoo.png"><br>
+						Gentoo
+					</span>
+					<span>
+						<img src="img/distros/bodhi.png"><br>
+						Bodhi Linux
+					</span>
+					<span>
+						<img src="img/distros/linux.png"><br>
+						Other
+					</span>
+				</div>
+				<div id="instructions">
+					<span><code>trizen -S terminology-themes-git</code></span>
+					<span><code>emerge x11-themes/terminology-themes</code></span> 
+					<span>
+						All themes: <code>apt-get install terminology-themes-pack</code><br>
+						Single theme: <code>apt-get install terminology-themes-<strong>$THEME_NAME</strong></code>
+					</span>
+					<span>
+						<code>edge_cc</code> needs to be installed (see <a href="https://github.com/sylveon/terminology-themes#installation" target="_blank">here</a>)<br>
+						<code>
+							git clone https://github.com/sylveon/terminology-themes<br>
+							make<br>
+							sudo make install
+						</code>
+					</span>
+				</div>
 			</header>
 			<main>
 				<ul id="thumblist"></ul>
@@ -32,6 +66,7 @@
 				<ul>
 					<li>nord-flat theme made by <a href="https://github.com/arcticicestudio" target="_blank">Artic Ice Studio</a></li>
 					<li>All other themes made by <a href="https://github.com/mbadolato/iTerm2-Color-Schemes#credits" target="_blank">their respective authors</a></li>
+					<li>All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.</li>
 				</ul>
 			</footer>
 		</div>

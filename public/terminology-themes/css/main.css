@@ -41,6 +41,43 @@ header {
 	text-align: center;
 }
 
+#distros {
+	width: 50%;
+	margin: auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+#distros > * {
+	width: 100px;
+}
+
+#distros > span > img {
+	width: 100px;
+
+	transition: filter 250ms linear;
+	filter: contrast(0);
+}
+
+#distros > span:hover > img,
+#distros > span.active > img {
+	filter: none;
+}
+
+#instructions {
+	margin-top: 10px;
+}
+
+code {
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.25);
+	padding: 3px;
+	text-align: left;
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 #thumblist {
 	display: flex;
 	flex-flow: row wrap;
