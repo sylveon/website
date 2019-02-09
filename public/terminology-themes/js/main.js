@@ -22,7 +22,7 @@
 		onOpen: () => document.getElementById("blur-wrapper").classList.add("blur"),
 		onClose: () => document.getElementById("blur-wrapper").classList.remove("blur")
 	});
-	
+
 	distros.forEach((e, i) => e.onclick = () => {
 		if (e.classList.contains("active")) {
 			hideStuff(distros, instructions);
