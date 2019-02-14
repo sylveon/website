@@ -49,7 +49,7 @@ h1 > .thin {
 }
 
 hr {
-	margin: 1rem;
+	margin: 1rem auto;
 	width: 150px;
 	border-style: solid;
 	border-color: rgba(255, 255, 255, 0.5);
