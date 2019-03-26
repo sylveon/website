@@ -7,7 +7,7 @@
 
 	hideStuff(distros, instructions);
 
-	const themes = await fetch("https://api.github.com/repos/sylveon/website/contents/public/terminology-themes/img/themes")
+	const themes = await fetch("https://api.github.com/repos/sylveon/website/contents/dist/terminology-themes/img/themes")
 		.then(r => r.json())
 		.then(d => d
 			.map(f => f.name.replace(".png", ""))
