@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sed -i "s/%{id}/${UNSPLASH_CLIENT_ID}/g" public/js/index.js
+sed -i "s/%{id}/${UNSPLASH_CLIENT_ID}/g" dist/js/index.js
