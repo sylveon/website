@@ -4,3 +4,8 @@
 
 [context.deploy-preview.environment]
   UNSPLASH_CLIENT_ID = "YmQ5ODhkY2U0M2Y5ZTRjMmU0ZmRmMGI5YjZjZTk2Y2Y3NGY2ZTY1ZWI2N2U5MjVjNDdmM2VkNjRmYWE5OGZjNA=="
+
+[[redirects]]
+  from = "https://sylveon.netlify.com/*"
+  to = "https://sylveon.dev/:splat"
+  force = true
