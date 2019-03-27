@@ -41,7 +41,7 @@ h1 {
 	text-transform: uppercase;
 	font-size: 4.2em;
 	letter-spacing: 0.1em;
-	margin: 0 150px;
+	margin: 0;
 }
 
 h1 > .thin {
@@ -69,10 +69,4 @@ a {
 
 a:hover {
 	color: rgba(255, 255, 255, 1.0);
-}
-
-@media only screen and (max-width: 768px) {
-	.main-title {
-		font-size: 3em;
-	}
 }
