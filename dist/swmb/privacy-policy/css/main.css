@@ -27,8 +27,8 @@ a {
 
 @media (prefers-color-scheme: dark) {
 	body {
-		color: #aaa;
-		background-color: #111;
+		color: #bbb;
+		background-color: #222;
 	}
 
 	a {
