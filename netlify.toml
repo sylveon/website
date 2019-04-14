@@ -14,8 +14,3 @@
   from = "https://charlesmilette.net/*"
   to = "https://sylveon.dev/:splat"
   force = true
-
-[[redirects]]
-  from = "https://www.charlesmilette.net/*"
-  to = "https://sylveon.dev/:splat"
-  force = true
