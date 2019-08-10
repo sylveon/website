@@ -1,28 +1,20 @@
-* {
-	transition-property: color, background-color;
-	transition-duration: 1s;
-	transition-timing-function: linear;
-}
-
 body {
-	font-family: Open Sans, Arial;
-	margin: 40px auto;
 	max-width: 650px;
-	line-height: 1.6;
+	margin: 40px auto;
+	padding: 0 10px;
+
+	font-family: Open Sans, Arial;
 	font-size: 18px;
+	line-height: 1.6;
+
 	color: #444;
 	background-color: white;
-	padding: 0 10px
 }
 
 h1,
 h2,
 h3 {
 	line-height: 1.2
-}
-
-a {
-	color: blue;
 }
 
 @media (prefers-color-scheme: dark) {
