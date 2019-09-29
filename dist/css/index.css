@@ -44,3 +44,7 @@ body {
 .fa-gitlab:hover {
 	color: #fc6d26;
 }
+
+.fa-bitbucket:hover {
+	color: #0052cc;
+}
