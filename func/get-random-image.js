@@ -1,6 +1,7 @@
-import fetch from "node-fetch";
+//import fetch from "node-fetch";
 
-export async function handler(event, context) {
+//export async function handler(event, context) {
+exports.handler =  async function(event, context) {
     if (event.httpMethod !== "GET") {
         return {
             statusCode: 405
@@ -8,16 +9,24 @@ export async function handler(event, context) {
     }
 
     if (event.queryStringParameters.w !== undefined && event.queryStringParameters.h !== undefined && event.queryStringParameters.orientation !== undefined) {
-        var width = parseInt(event.queryStringParameters.w, 10);
-        var height = parseInt(event.queryStringParameters.h, 10);
-        var orientation = event.queryStringParameters.orientation;
+        const width = parseInt(event.queryStringParameters.w, 10);
+        const height = parseInt(event.queryStringParameters.h, 10);
+        const orientation = event.queryStringParameters.orientation;
         if (!isNaN(width) && !isNaN(height) && (orientation === "squarish" || orientation === "landscape" || orientation === "portrait")) {
-            const result = await fetch(`https://api.unsplash.com/photos/random?w=${width}&h=${height}&orientation=${orientation}&client_id=${process.env.UNSPLASH_CLIENT_ID}`).then(r => r.json());
+            const fetch = require("node-fetch");
+            const result = await fetch(`https://api.unsplash.com/photos/random?w=${width}&h=${height}&orientation=${orientation}&client_id=${process.env.UNSPLASH_CLIENT_ID}`);
+            if (result.status !== 200) {
+                return {
+                    statusCode: 500
+                };
+            }
+
+            const data = await result.json();
 
             const reply = {
-                url: result.urls.custom,
-                source: result.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
-                author: result.user.name ? result.user.name : result.user.username
+                url: data.urls.custom,
+                source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
+                author: data.user.name ? data.user.name : data.user.username
             };
 
             return {
