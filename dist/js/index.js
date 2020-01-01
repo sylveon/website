@@ -13,15 +13,18 @@
 		orientation = "portrait";
 	}
 
-	const image  = await fetch(`/.netlify/functions/get-random-image?w=${width}&h=${height}&orientation=${orientation}`).then(r => r.json());
-	const back   = document.getElementById("back");
-	const source = document.getElementById("source");
-	back.onload = () => {
-		source.classList.add("loaded");
-		back.classList.add("loaded");
-	};
-
-	back.src = image.url;
-	source.href = image.source;
-	document.getElementById("author").textContent = image.author;
+	const result  = await fetch(`/.netlify/functions/get-random-image?w=${width}&h=${height}&orientation=${orientation}`);
+	if (result.ok) {
+		const image = await result.json();
+		const back   = document.getElementById("back");
+		const source = document.getElementById("source");
+		back.onload = () => {
+			source.classList.add("loaded");
+			back.classList.add("loaded");
+		};
+	
+		back.src = image.url;
+		source.href = image.source;
+		document.getElementById("author").textContent = image.author;
+	}
 })();

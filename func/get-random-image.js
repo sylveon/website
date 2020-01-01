@@ -16,6 +16,8 @@ exports.handler =  async function(event, context) {
             const fetch = require("node-fetch");
             const result = await fetch(`https://api.unsplash.com/photos/random?w=${width}&h=${height}&orientation=${orientation}&client_id=${process.env.UNSPLASH_CLIENT_ID}`);
             if (!result.ok) {
+                console.log(result.status);
+                console.log(await result.text());
                 return {
                     statusCode: 500
                 };
