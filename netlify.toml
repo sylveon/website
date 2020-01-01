@@ -1,16 +1,22 @@
 [build]
   publish = "dist"
   functions = "func"
+  processing = {
+    css = { bundle = true, minify = true },
+    js = { bundle = true, minify = true },
+    html = { pretty_urls = true },
+    images = { compress = true }
+  }
   command = "cd func && npm i"
-  environment = { AWS_LAMBDA_JS_RUNTIME = "nodejs12.x" }
-  processing.css = { bundle = true, minify = true }
-  processing.js = { bundle = true, minify = true }
-  processing.html = { pretty_urls = true }
-  processing.images = { compress = true }
+  environment = {
+    AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
+  }
 
 [context.deploy-preview]
   skip_processing = true
-  environment = { UNSPLASH_CLIENT_ID = "bd988dce43f9e4c2e4fdf0b9b6ce96cf74f6e65eb67e925c47f3ed64faa98fc4" }
+  environment = {
+    UNSPLASH_CLIENT_ID = "bd988dce43f9e4c2e4fdf0b9b6ce96cf74f6e65eb67e925c47f3ed64faa98fc4"
+  }
 
 [[redirects]]
   from = "https://sylveon.netlify.com/*"
