@@ -1,9 +1,22 @@
 [build]
   publish = "dist"
-  command = "./put-secrets.sh"
+  functions = "func"
+  command = "cd func && npm i"
 
-[context.deploy-preview.environment]
-  UNSPLASH_CLIENT_ID = "YmQ5ODhkY2U0M2Y5ZTRjMmU0ZmRmMGI5YjZjZTk2Y2Y3NGY2ZTY1ZWI2N2U5MjVjNDdmM2VkNjRmYWE5OGZjNA=="
+[build.environment]
+  AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
+
+[build.processing]
+  css = { bundle = true, minify = true }
+  js = { bundle = true, minify = true }
+  html = { pretty_urls = true }
+  images = { compress = true }
+
+[context.deploy-preview]
+  skip_processing = true
+
+[context.deploy_preview.environment]
+  UNSPLASH_CLIENT_ID = "bd988dce43f9e4c2e4fdf0b9b6ce96cf74f6e65eb67e925c47f3ed64faa98fc4"
 
 [[redirects]]
   from = "https://sylveon.netlify.com/*"
