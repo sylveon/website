@@ -15,9 +15,9 @@ export async function handler(event, context) {
             const result = await fetch(`https://api.unsplash.com/photos/random?w=${width}&h=${height}&orientation=${orientation}&client_id=${process.env.UNSPLASH_CLIENT_ID}`).then(r => r.json());
 
             const reply = {
-                url = result.urls.custom,
-                source = result.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
-                author = result.user.name ? result.user.name : result.user.username
+                url: result.urls.custom,
+                source: result.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
+                author: result.user.name ? result.user.name : result.user.username
             };
 
             return {
