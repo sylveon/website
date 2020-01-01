@@ -14,26 +14,22 @@ exports.handler =  async function(event, context) {
         const orientation = event.queryStringParameters.orientation;
         if (!isNaN(width) && !isNaN(height) && (orientation === "squarish" || orientation === "landscape" || orientation === "portrait")) {
             const fetch = require("node-fetch");
+
             const result = await fetch(`https://api.unsplash.com/photos/random?w=${width}&h=${height}&orientation=${orientation}&client_id=${process.env.UNSPLASH_CLIENT_ID}`);
             if (!result.ok) {
-                console.log(result.status);
-                console.log(await result.text());
                 return {
                     statusCode: 500
                 };
             }
 
             const data = await result.json();
-
-            const reply = {
-                url: data.urls.custom,
-                source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
-                author: data.user.name ? data.user.name : data.user.username
-            };
-
             return {
                 statusCode: 200,
-                body: JSON.stringify(reply)
+                body: JSON.stringify({
+                    url: data.urls.custom,
+                    source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
+                    author: data.user.name ? data.user.name : data.user.username
+                })
             };
         }
     }
