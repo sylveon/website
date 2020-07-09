@@ -15,10 +15,10 @@
 [context.deploy-preview]
   skip_processing = true
 
-[context.deploy_preview.environment]
+[context.deploy-preview.environment]
   UNSPLASH_CLIENT_ID = "bd988dce43f9e4c2e4fdf0b9b6ce96cf74f6e65eb67e925c47f3ed64faa98fc4"
 
 [[redirects]]
-  from = "https://sylveon.netlify.com/*"
+  from = "https://sylveon.netlify.app/*"
   to = "https://sylveon.dev/:splat"
   force = true
