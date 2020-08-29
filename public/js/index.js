@@ -24,6 +24,7 @@
 		};
 
 		back.src = image.url;
+		back.alt = image.description;
 		source.href = image.source;
 		document.getElementById("author").textContent = image.author;
 	}

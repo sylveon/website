@@ -28,7 +28,8 @@ exports.handler = async function (event, context) {
 				body: JSON.stringify({
 					url: data.urls.custom,
 					source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
-					author: data.user.name ? data.user.name : data.user.username
+					author: data.user.name ? data.user.name : data.user.username,
+					description: data.description
 				})
 			};
 		}
