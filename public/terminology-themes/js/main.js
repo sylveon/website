@@ -35,7 +35,7 @@
 })();
 
 function renderTheme(themeName) {
-	const imageFile = `img/themes/${themeName}.png`;
+	const imageFile = `img/themes/${encodeURIComponent(themeName)}.png`;
 
 	const card = document.createElement("a");
 	card.href = imageFile;
@@ -44,6 +44,7 @@ function renderTheme(themeName) {
 	thumbnail.setAttribute("data-src", imageFile);
 	thumbnail.width = 642 * 0.8;
 	thumbnail.height = 390 * 0.8;
+	thumbnail.alt = themeName;
 	thumbnail.className = "lazyload";
 
 	const name = document.createElement("h3");
