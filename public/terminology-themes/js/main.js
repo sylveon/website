@@ -18,9 +18,7 @@
 
 	new LuminousGallery(themes, {}, {
 		caption: e => e.textContent,
-		closeOnScroll: true,
-		onOpen: () => document.getElementById("blur-wrapper").classList.add("blur"),
-		onClose: () => document.getElementById("blur-wrapper").classList.remove("blur")
+		closeOnScroll: true
 	});
 
 	distros.forEach((e, i) => e.onclick = () => {
