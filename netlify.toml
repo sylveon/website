@@ -1,7 +1,7 @@
 [build]
   publish = "public"
   functions = "func"
-  command = "echo lol"
+  command = "true" # Without a build command, Netlify does not restore NPM packages
 
 [build.environment]
   AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
