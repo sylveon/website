@@ -45,8 +45,6 @@ header {
 }
 
 #distros > span > img {
-	width: 100px;
-
 	transition: filter 250ms linear;
 	filter: contrast(0);
 }
