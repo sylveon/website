@@ -15,7 +15,7 @@ exports.handler = async function (event, context) {
 		if (!isNaN(width) && !isNaN(height) && (orientation === "squarish" || orientation === "landscape" || orientation === "portrait")) {
 			const fetch = require("node-fetch");
 
-			const result = await fetch(`https://api.unsplash.com/photos/random?w=${width}&h=${height}&orientation=${orientation}&client_id=${process.env.UNSPLASH_CLIENT_ID}`);
+			const result = await fetch(`https://api.unsplash.com/photos/random?w=${encodeURIComponent(width)}&h=${encodeURIComponent(height)}&orientation=${encodeURIComponent(orientation)}&client_id=${encodeURIComponent(process.env.UNSPLASH_CLIENT_ID)}`);
 			if (!result.ok) {
 				return {
 					statusCode: 500

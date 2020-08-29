@@ -13,7 +13,7 @@
 		orientation = "portrait";
 	}
 
-	const result  = await fetch(`/.netlify/functions/get-random-image?w=${width}&h=${height}&orientation=${orientation}`);
+	const result  = await fetch(`/.netlify/functions/get-random-image?w=${encodeURIComponent(width)}&h=${encodeURIComponent(height)}&orientation=${encodeURIComponent(orientation)}`);
 	if (result.ok) {
 		const image  = await result.json();
 		const back   = document.getElementById("back");
