@@ -9,9 +9,11 @@ exports.handler = async function (event, context) {
 
 	const queryParams = validateParams(event.queryStringParameters);
 	if (queryParams) {
+		const { width, height } = queryParams;
+
 		const params = new URLSearchParams();
-		params.set("w", queryParams.width);
-		params.set("h", queryParams.height);
+		params.set("w", width);
+		params.set("h", height);
 		params.set("query", "landscape");
 		params.set("content_filter", "low");
 		params.set("client_id", process.env.UNSPLASH_CLIENT_ID);
