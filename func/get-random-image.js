@@ -1,6 +1,5 @@
-//import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-//export async function handler(event, context) {
 exports.handler = async function (event, context) {
 	if (event.httpMethod !== "GET") {
 		return {
@@ -8,34 +7,54 @@ exports.handler = async function (event, context) {
 		};
 	}
 
-	if (event.queryStringParameters.w !== undefined && event.queryStringParameters.h !== undefined && event.queryStringParameters.orientation !== undefined) {
-		const width = parseInt(event.queryStringParameters.w, 10);
-		const height = parseInt(event.queryStringParameters.h, 10);
-		const orientation = event.queryStringParameters.orientation;
-		if (!isNaN(width) && !isNaN(height) && (orientation === "squarish" || orientation === "landscape" || orientation === "portrait")) {
-			const fetch = require("node-fetch");
+	const queryParams = validateParams(event.queryStringParameters);
+	if (queryParams) {
+		const params = new URLSearchParams();
+		params.set("w", queryParams.width);
+		params.set("h", queryParams.height);
+		params.set("query", "landscape");
+		params.set("content_filter", "low");
+		params.set("client_id", process.env.UNSPLASH_CLIENT_ID);
 
-			const result = await fetch(`https://api.unsplash.com/photos/random?w=${encodeURIComponent(width)}&h=${encodeURIComponent(height)}&orientation=${encodeURIComponent(orientation)}&client_id=${encodeURIComponent(process.env.UNSPLASH_CLIENT_ID)}`);
-			if (!result.ok) {
-				return {
-					statusCode: 500
-				};
-			}
+		if (Math.abs(width - height) <= 200) {
+			params.set("orientation", "squarish");
+		} else if (width > height) {
+			params.set("orientation", "landscape");
+		} else if (height > width) {
+			params.set("orientation", "portrait");
+		}
 
-			const data = await result.json();
+		const result = await fetch(`https://api.unsplash.com/photos/random?${params.toString()}`);
+		if (!result.ok) {
 			return {
-				statusCode: 200,
-				body: JSON.stringify({
-					url: data.urls.custom,
-					source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
-					author: data.user.name ? data.user.name : data.user.username,
-					description: data.description
-				})
+				statusCode: 500
 			};
 		}
+
+		const data = await result.json();
+		return {
+			statusCode: 200,
+			body: JSON.stringify({
+				url: data.urls.custom,
+				source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
+				author: data.user.name || data.user.username,
+				description: data.description
+			})
+		};
 	}
 
 	return {
 		statusCode: 400
 	};
+}
+
+function validateParams(queryStringParameters) {
+	const width = parseInt(queryStringParameters.w, 10);
+	const height = parseInt(queryStringParameters.h, 10);
+
+	if (!isNaN(width) && width >= 1 && !isNaN(height) && height >= 1) {
+		return { width, height, orientation };
+	}
+
+	return false;
 }

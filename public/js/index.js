@@ -1,19 +1,11 @@
 "use strict";
 
 (async () => {
-	const width    = window.screen.width;
-	const height   = window.screen.height;
+	const params = new URLSearchParams();
+	params.set("w", window.screen.width);
+	params.set("h", window.screen.height);
 
-	let orientation;
-	if (Math.abs(width - height) <= 200) {
-		orientation = "squarish";
-	} else if (width > height) {
-		orientation = "landscape";
-	} else if (height > width) {
-		orientation = "portrait";
-	}
-
-	const result  = await fetch(`/.netlify/functions/get-random-image?w=${encodeURIComponent(width)}&h=${encodeURIComponent(height)}&orientation=${encodeURIComponent(orientation)}`);
+	const result  = await fetch(`/.netlify/functions/get-random-image?${params.toString()}`);
 	if (result.ok) {
 		const image  = await result.json();
 		const back   = document.getElementById("back");
