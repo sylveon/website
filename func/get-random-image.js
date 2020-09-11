@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
 		const params = new URLSearchParams();
 		params.set("w", width);
 		params.set("h", height);
-		params.set("query", "landscape");
+		params.set("query", "stars astronomy");
 		params.set("content_filter", "low");
 		params.set("client_id", process.env.UNSPLASH_CLIENT_ID);
 
