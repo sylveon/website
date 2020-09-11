@@ -53,7 +53,7 @@ function validateParams(queryStringParameters) {
 	const height = parseInt(queryStringParameters.h, 10);
 
 	if (!isNaN(width) && width >= 1 && !isNaN(height) && height >= 1) {
-		return { width, height, orientation };
+		return { width, height };
 	}
 
 	return false;
