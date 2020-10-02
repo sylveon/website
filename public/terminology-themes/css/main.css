@@ -117,7 +117,8 @@ code {
 }
 
 .lum-lightbox {
-	backdrop-filter: blur(10pt);
+	backdrop-filter: blur(10pt) brightness(60%);
+	background: initial;
 }
 
 .github-fork-ribbon:before {
