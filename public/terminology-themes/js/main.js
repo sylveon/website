@@ -15,10 +15,11 @@ async function asyncInit() {
 
 				const thumbnail = document.createElement("img");
 				thumbnail.setAttribute("data-src", imageFile);
-				thumbnail.width = 642 * 0.8;
-				thumbnail.height = 390 * 0.8;
 				thumbnail.alt = themeName;
-				thumbnail.className = "lazyload";
+				thumbnail.classList.add("lazyload");
+				thumbnail.onerror = () => {
+					thumbnail.style.opacity = "0";
+				}
 
 				const name = document.createElement("h3");
 				name.textContent = themeName;

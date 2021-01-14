@@ -1,6 +1,15 @@
-body {
-	background: #321a48;
+:root {
+	--thumbnail-scale: 0.8;
+	--thumbnail-width: calc(642px * var(--thumbnail-scale));
+	--thumbnail-height: calc(390px * var(--thumbnail-scale));
+}
 
+html {
+	background: #321a48;
+}
+
+body {
+	margin: 0;
 	color: rgba(255, 255, 255, 0.65);
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
@@ -74,7 +83,6 @@ code {
 }
 
 #thumblist > * {
-	width: calc(642px * 0.8);
 	margin: 1.5em;
 
 	text-align: center;
@@ -98,6 +106,12 @@ code {
 }
 
 #thumblist img {
+	max-width: var(--thumbnail-width);
+	min-width: var(--thumbnail-width);
+	max-height: var(--thumbnail-height);
+	min-height: var(--thumbnail-height);
+	object-fit: contain;
+
 	transition: opacity 1s ease;
 	opacity: 0;
 }
@@ -128,5 +142,9 @@ code {
 footer {
 	font-size: 80%;
 	text-align: right;
-	margin: 1em;
+	padding: 1em;
+}
+
+footer > ul {
+	margin: 0;
 }
