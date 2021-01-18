@@ -22,3 +22,7 @@
   from = "https://sylveon.netlify.app/*"
   to = "https://sylveon.dev/:splat"
   force = true
+
+[[redirects]]
+  from = "/TranslucentTB/schema"
+  to = "https://raw.githubusercontent.com/TranslucentTB/TranslucentTB/develop/config.schema.json"
