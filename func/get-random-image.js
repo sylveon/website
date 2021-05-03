@@ -34,10 +34,14 @@ exports.handler = async function (event, context) {
 		}
 
 		const data = await result.json();
+		const returnParams = new URLSearchParams();
+		returnParams.set("w", width);
+		returnParams.set("h", height);
+
 		return {
 			statusCode: 200,
 			body: JSON.stringify({
-				url: data.urls.custom,
+				url: `${data.urls.full}&${returnParams.toString()}`,
 				source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
 				author: data.user.name || data.user.username,
 				description: data.description
