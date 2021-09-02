@@ -4,11 +4,10 @@
 	Version="1.0.0.0"
 	Uri="https://sylveon.dev/TranslucentTB.appinstaller" >
 
-	<MainPackage
+	<MainBundle
 		Name="28017CharlesMilette.TranslucentTB"
 		Publisher="CN=04797BBC-C7BB-462F-9B66-331C81E27C0E"
 		Version="2021.4.0.0"
-		ProcessorArchitecture="neutral"
 		Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/bundle.msixbundle" />
 
 	<Dependencies>
