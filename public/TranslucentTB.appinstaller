@@ -7,17 +7,35 @@
 	<MainPackage
 		Name="28017CharlesMilette.TranslucentTB"
 		Publisher="CN=04797BBC-C7BB-462F-9B66-331C81E27C0E"
-		Version="9.0.0.0"
-		ProcessorArchitecture="x86"
-		Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2020.2/TranslucentTB-package.msix" />
+		Version="2021.4.0.0"
+		ProcessorArchitecture="neutral"
+		Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/bundle.msixbundle" />
 
 	<Dependencies>
 		<Package
 			Name="Microsoft.VCLibs.140.00.UWPDesktop"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="14.0.29231.0"
-			ProcessorArchitecture="x86"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2020.2/vclibs.msix" />
+			Version="14.0.30035.0"
+			ProcessorArchitecture="x64"
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-desktop-x64.msix" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.UWPDesktop"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="14.0.30035.0"
+			ProcessorArchitecture="arm64"
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-desktop-arm64.msix" />
+		<Package
+			Name="Microsoft.VCLibs.140.00"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="14.0.30035.0"
+			ProcessorArchitecture="x64"
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-uwp-x64.msix" />
+		<Package
+			Name="Microsoft.VCLibs.140.00"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			Version="14.0.30035.0"
+			ProcessorArchitecture="arm64"
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-uwp-arm64.msix" />
 	</Dependencies>
 
 	<UpdateSettings>
