@@ -25,4 +25,4 @@
 
 [[redirects]]
   from = "/TranslucentTB/schema"
-  to = "https://raw.githubusercontent.com/TranslucentTB/TranslucentTB/develop/settings.schema.json"
+  to = "https://raw.githubusercontent.com/TranslucentTB/TranslucentTB/release/settings.schema.json"
