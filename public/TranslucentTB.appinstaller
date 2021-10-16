@@ -16,37 +16,37 @@
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="14.0.30035.0"
 			ProcessorArchitecture="x64"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-desktop-x64.msix" />
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-desktop-x64.appx" />
 		<Package
 			Name="Microsoft.VCLibs.140.00.UWPDesktop"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="14.0.30035.0"
 			ProcessorArchitecture="arm64"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-desktop-arm64.msix" />
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-desktop-arm64.appx" />
 		<Package
 			Name="Microsoft.VCLibs.140.00"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="14.0.30035.0"
 			ProcessorArchitecture="x64"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-uwp-x64.msix" />
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-uwp-x64.appx" />
 		<Package
 			Name="Microsoft.VCLibs.140.00"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="14.0.30035.0"
 			ProcessorArchitecture="arm64"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-uwp-arm64.msix" />
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.4/vclibs-uwp-arm64.appx" />
 		<Package
 			Name="Microsoft.UI.Xaml.2.7"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="7.2109.13004.0"
 			ProcessorArchitecture="x64"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.5/winui-x64.msix" />
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.5/winui-x64.appx" />
 		<Package
 			Name="Microsoft.UI.Xaml.2.7"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="7.2109.13004.0"
 			ProcessorArchitecture="arm64"
-			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.5/winui-arm64.msix" />
+			Uri="https://github.com/TranslucentTB/TranslucentTB/releases/download/2021.5/winui-arm64.appx" />
 	</Dependencies>
 
 	<UpdateSettings>
