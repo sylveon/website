@@ -4,7 +4,7 @@
   command = "true" # Without a build command, Netlify does not restore NPM packages
 
 [build.environment]
-  AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
+  AWS_LAMBDA_JS_RUNTIME = "nodejs14.x"
 
 [build.processing]
   css = { bundle = true, minify = true }
@@ -17,6 +17,9 @@
 
 [context.deploy-preview.environment]
   UNSPLASH_CLIENT_ID = "bd988dce43f9e4c2e4fdf0b9b6ce96cf74f6e65eb67e925c47f3ed64faa98fc4"
+
+[functions]
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "https://sylveon.netlify.app/*"

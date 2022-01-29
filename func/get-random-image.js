@@ -1,6 +1,6 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async function (event, context) {
+export async function handler(event, context) {
 	if (event.httpMethod !== "GET") {
 		return {
 			statusCode: 405
@@ -27,31 +27,32 @@ exports.handler = async function (event, context) {
 		}
 
 		const result = await fetch(`https://api.unsplash.com/photos/random?${params.toString()}`);
-		if (!result.ok) {
+		const data = await result.json();
+		if (result.ok) {
+			const returnParams = new URLSearchParams();
+			returnParams.set("w", width);
+			returnParams.set("h", height);
+
+			return {
+				statusCode: 200,
+				body: JSON.stringify({
+					url: `${data.urls.full}&${returnParams.toString()}`,
+					source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
+					author: data.user.name || data.user.username,
+					description: data.description
+				})
+			};
+		} else {
+			console.log(JSON.stringify(data));
 			return {
 				statusCode: 500
 			};
 		}
-
-		const data = await result.json();
-		const returnParams = new URLSearchParams();
-		returnParams.set("w", width);
-		returnParams.set("h", height);
-
+	} else {
 		return {
-			statusCode: 200,
-			body: JSON.stringify({
-				url: `${data.urls.full}&${returnParams.toString()}`,
-				source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
-				author: data.user.name || data.user.username,
-				description: data.description
-			})
+			statusCode: 400
 		};
 	}
-
-	return {
-		statusCode: 400
-	};
 }
 
 function validateParams(queryStringParameters) {
@@ -60,7 +61,7 @@ function validateParams(queryStringParameters) {
 
 	if (!isNaN(width) && width >= 1 && !isNaN(height) && height >= 1) {
 		return { width, height };
+	} else {
+		return false;
 	}
-
-	return false;
 }
