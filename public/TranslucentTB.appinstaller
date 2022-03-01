@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-	xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
+	xmlns="http://schemas.microsoft.com/appx/appinstaller/2018"
 	Version="1.0.0.0"
 	Uri="https://sylveon.dev/TranslucentTB.appinstaller" >
 
@@ -50,7 +50,8 @@
 	</Dependencies>
 
 	<UpdateSettings>
-		<OnLaunch HoursBetweenUpdateChecks="12" />
+		<OnLaunch HoursBetweenUpdateChecks="12" ShowPrompt="true" />
+		<ForceUpdateFromAnyVersion>true</ForceUpdateFromAnyVersion>
 	</UpdateSettings>
 
 </AppInstaller>
