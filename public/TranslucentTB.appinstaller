@@ -50,7 +50,8 @@
 	</Dependencies>
 
 	<UpdateSettings>
-		<OnLaunch HoursBetweenUpdateChecks="12" ShowPrompt="true" />
+		<OnLaunch HoursBetweenUpdateChecks="24" />
+		<AutomaticBackgroundTask />
 		<ForceUpdateFromAnyVersion>true</ForceUpdateFromAnyVersion>
 	</UpdateSettings>
 
