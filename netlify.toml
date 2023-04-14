@@ -29,3 +29,8 @@
 [[redirects]]
   from = "/TranslucentTB/schema"
   to = "https://raw.githubusercontent.com/TranslucentTB/TranslucentTB/release/settings.schema.json"
+
+[[headers]]
+  for = "/*.appinstaller"
+  [headers.values]
+    Content-Type = "application/appinstaller"
