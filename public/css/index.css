@@ -53,3 +53,11 @@ body {
 .fa-bitbucket:hover {
 	color: #0052cc;
 }
+
+.fa-twitter:hover {
+	color: #1D9BF0;
+}
+
+.fa-mastodon:hover {
+	color: #6364FF;
+}
