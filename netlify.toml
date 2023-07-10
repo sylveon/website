@@ -27,7 +27,7 @@
 
 [[redirects]]
   from = "/TranslucentTB/schema"
-  to = "https://raw.githubusercontent.com/TranslucentTB/TranslucentTB/release/settings.schema.json"
+  to = "https://translucenttb.github.io/settings.schema.json"
 
 [[redirects]]
   from = "/TranslucentTB.appinstaller"
