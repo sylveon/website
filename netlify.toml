@@ -1,6 +1,5 @@
 [build]
   publish = "public"
-  functions = "func"
   command = "true" # Without a build command, Netlify does not restore NPM packages
 
 [build.environment]
@@ -30,7 +29,6 @@
   from = "/TranslucentTB/schema"
   to = "https://raw.githubusercontent.com/TranslucentTB/TranslucentTB/release/settings.schema.json"
 
-[[headers]]
-  for = "/*.appinstaller"
-  [headers.values]
-    Content-Type = "application/appinstaller"
+[[redirects]]
+  from = "/TranslucentTB.appinstaller"
+  to = "https://translucenttb.github.io/TranslucentTB.appinstaller"
