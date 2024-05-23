@@ -41,23 +41,3 @@ body {
 .fa {
 	margin: 0 2.5px;
 }
-
-.fa-github:hover {
-	color: #333;
-}
-
-.fa-gitlab:hover {
-	color: #fc6d26;
-}
-
-.fa-bitbucket:hover {
-	color: #0052cc;
-}
-
-.fa-twitter:hover {
-	color: #1D9BF0;
-}
-
-.fa-mastodon:hover {
-	color: #6364FF;
-}

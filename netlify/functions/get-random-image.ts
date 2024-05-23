@@ -1,6 +1,7 @@
+import { Handler, HandlerEvent } from "@netlify/functions";
 import fetch from "node-fetch";
 
-export async function handler(event, context) {
+export const handler: Handler = async (event, context) => {
 	if (event.httpMethod !== "GET") {
 		return {
 			statusCode: 405
@@ -12,11 +13,13 @@ export async function handler(event, context) {
 		const { width, height } = queryParams;
 
 		const params = new URLSearchParams();
-		params.set("w", width);
-		params.set("h", height);
+		params.set("w", width.toString());
+		params.set("h", height.toString());
 		params.set("query", "stars astronomy");
 		params.set("content_filter", "low");
-		params.set("client_id", process.env.UNSPLASH_CLIENT_ID);
+		if (process.env.UNSPLASH_CLIENT_ID) {
+			params.set("client_id", process.env.UNSPLASH_CLIENT_ID);
+		}
 
 		if (Math.abs(width - height) <= 200) {
 			params.set("orientation", "squarish");
@@ -27,11 +30,11 @@ export async function handler(event, context) {
 		}
 
 		const result = await fetch(`https://api.unsplash.com/photos/random?${params.toString()}`);
-		const data = await result.json();
+		const data: any = await result.json();
 		if (result.ok) {
 			const returnParams = new URLSearchParams();
-			returnParams.set("w", width);
-			returnParams.set("h", height);
+			returnParams.set("w", width.toString());
+			returnParams.set("h", height.toString());
 
 			return {
 				statusCode: 200,
@@ -55,13 +58,15 @@ export async function handler(event, context) {
 	}
 }
 
-function validateParams(queryStringParameters) {
-	const width = parseInt(queryStringParameters.w, 10);
-	const height = parseInt(queryStringParameters.h, 10);
+function validateParams(queryStringParameters: HandlerEvent["queryStringParameters"]) {
+	if (queryStringParameters && queryStringParameters.w && queryStringParameters.h) {
+		const width = parseInt(queryStringParameters.w, 10);
+		const height = parseInt(queryStringParameters.h, 10);
 
-	if (!isNaN(width) && width >= 1 && !isNaN(height) && height >= 1) {
-		return { width, height };
-	} else {
-		return false;
+		if (!isNaN(width) && width >= 1 && !isNaN(height) && height >= 1) {
+			return { width, height };
+		}
 	}
+
+	return false;
 }

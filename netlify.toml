@@ -6,10 +6,7 @@
   AWS_LAMBDA_JS_RUNTIME = "nodejs20.x"
 
 [build.processing]
-  css = { bundle = true, minify = true }
-  js = { bundle = true, minify = true }
   html = { pretty_urls = true }
-  images = { compress = true }
 
 [context.deploy-preview]
   skip_processing = true
@@ -24,11 +21,3 @@
   from = "https://sylveon.netlify.app/*"
   to = "https://sylveon.dev/:splat"
   force = true
-
-[[redirects]]
-  from = "/TranslucentTB/schema"
-  to = "https://translucenttb.github.io/settings.schema.json"
-
-[[redirects]]
-  from = "/TranslucentTB.appinstaller"
-  to = "https://translucenttb.github.io/TranslucentTB.appinstaller"
