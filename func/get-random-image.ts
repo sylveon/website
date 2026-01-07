@@ -29,7 +29,7 @@ export const handler: Handler = async (event, context) => {
 			params.set("orientation", "portrait");
 		}
 
-		const result = await fetch(`https://api.unsplash.com/photos/random?${params.toString()}`);
+		const result = await fetch(`https://api.unsplash.com/photos/random?${params}`);
 		const data: any = await result.json();
 		if (result.ok) {
 			const returnParams = new URLSearchParams();
@@ -39,7 +39,7 @@ export const handler: Handler = async (event, context) => {
 			return {
 				statusCode: 200,
 				body: JSON.stringify({
-					url: `${data.urls.full}&${returnParams.toString()}`,
+					url: `${data.urls.full}&${returnParams}`,
 					source: data.user.links.html + "?utm_source=charlesmilette-website&utm_medium=referral",
 					author: data.user.name || data.user.username,
 					description: data.description

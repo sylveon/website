@@ -5,7 +5,7 @@
 	params.set("w", window.screen.width);
 	params.set("h", window.screen.height);
 
-	const result  = await fetch(`/.netlify/functions/get-random-image?${params.toString()}`);
+	const result  = await fetch(`/.netlify/functions/get-random-image?${params}`);
 	if (result.ok) {
 		const image  = await result.json();
 		const back   = document.getElementById("back");

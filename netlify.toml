@@ -1,5 +1,6 @@
 [build]
   publish = "public"
+  functions = "func"
   command = "true" # Without a build command, Netlify does not restore NPM packages
 
 [build.environment]
